@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#toggle-one").change(function(){}),$(function(){$(document).snow({SnowImage:"img/snow.png"})})});

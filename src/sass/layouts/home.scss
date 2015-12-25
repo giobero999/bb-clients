@@ -1,0 +1,187 @@
+body {
+  font-family: 'titilium';
+}
+.container {
+  background: #fff;
+}
+header {
+  @include background(linear-gradient($red 0%, lighten($black, 10%) 400%) left repeat);
+  //background: $red;
+  width: 100%;
+  height: 50px;
+  border-radius: 0;
+}
+.google-map {
+  width: 100%;
+  background: #000;
+  height: 500px;
+  @include transition(none);
+  #map {
+    width: 100%;
+    height: 500px;
+    @include transition(none);
+  }
+}
+
+.labels {
+  color: $black;
+  display: block;
+  overflow: hidden;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+  font-size: 9px;
+  font-weight: bold;
+  text-align: center;
+  width: 23px;
+  border: 0px solid $red;
+
+}
+
+
+//header, map end
+.content {
+  outline: 0 solid #e0e0e0;
+  margin-top: 10px;
+  background: #fff;
+  max-width: 100%;
+  .nav-tabs {
+    li {
+      a {
+        text-align: center;
+        #bb-icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .billboard {
+    padding: 3px;
+    margin-bottom: 60px;
+    &:hover {}
+    .box {
+      position: relative;
+      padding-right: 0;
+      .slider-img {
+        background: #ccc;
+        background-size: cover;
+        @include filter(contrast(110%));
+        .slider-arrow {
+          position: absolute;
+          left: 10px;
+          color: $black;
+          top: 50%;
+          margin-top: -10px;
+        }
+        .edit-btn {
+          opacity: 0;
+          @include position(absolute, 0 0 null null);
+          border-radius: 0;
+          cursor: pointer;
+        }
+      }
+      .default-img {
+        margin-top: 10px;
+      }
+    }
+    .info {
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          margin: 0;
+          border-bottom: 0 dashed #ccc;
+          list-style: none;
+          &:last-child {
+            border: none;
+          }
+          span {
+            position: absolute;
+          }
+          p {
+            vertical-align: top;
+            text-align: right;
+            margin: 3px 0 0;
+            padding: 0 0 5px;
+            border-bottom: 1px dashed #ccc;
+            button {}
+          }
+          .dash {}
+        }
+      }
+    }
+  }
+}
+//content
+//create modal
+#bb-create {
+  @media screen and (min-width: 768px) {
+    .modal-dialog {
+      width: 900px;
+    }
+  }
+  .modal-header {
+    text-align: center;
+  }
+  .modal-content {
+    border-radius: 0;
+    input,
+    textarea {
+      border-radius: 0;
+      border: 2px solid darken($gray, 20%);
+    }
+    #bb-type {
+      border-radius: 0;
+      border: 2px solid darken($gray, 20%);
+    }
+    .add-button {
+      background: $white;
+      color: $black;
+      border-radius: 0;
+      border: 2px solid lighten($black, 20%);
+    }
+    .btn-file {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      border: 2px solid darken($gray, 20%);
+    }
+    .btn-file input[type=file] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 100%;
+      min-height: 100%;
+      font-size: 100px;
+      text-align: right;
+      filter:alpha(opacity=0);
+      opacity: 0;
+      outline: none;
+      background: white;
+      cursor: inherit;
+      display: block;
+    }
+    .btn-save-cancel {
+      margin-bottom: 10px;
+      .save-btn {
+        border-radius: 0;
+        background: lighten($black, 20%);
+        color: $white;
+        border: 1px solid $black;
+        padding: 5px 30px;
+        cursor: pointer;
+      }
+      .cancel-btn {
+        margin-right: 10px;
+        border-radius: 0;
+        border: 1px solid $black;
+        background: lighten($black, 100%);
+        @include box-sizing(border-box);
+        color: $black;
+        padding: 5px 30px;
+        cursor: pointer;
+      }
+    }
+    .modal-footer {
+      margin-top: 10px;
+    }
+  }
+}
