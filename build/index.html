@@ -34,8 +34,21 @@
   <!-- container start -->
   <div class="container">
     <div class="content">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs col-md-12" role="tablist">
+        <li role="presentation" class="active col-md-6 col-xs-6">
+          <a href="#billboards" aria-controls="billboards" role="tab" data-toggle="tab">
+            <img src="img/bb.png" id="bb-icon" width="20" alt=""> BILLBOARDS</a>
+        </li>
+        <li role="presentation" class="col-md-6 col-xs-6">
+          <a href="#monitors" aria-controls="monitors" role="tab" data-toggle="tab">
+            <img src="img/tt.svg" width="30px" height="20px" alt=""> MONITORS</a>
+        </li>
+      </ul>
 
-
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="billboards" role="tabpanel">
         <div class="grid" >
           <div class="billboard   col col--12-of-12">
             <div class="box col col--3-of-12">
@@ -344,9 +357,9 @@
         </div>
 
 
-
-
-
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="monitors">monitors</div>
+      </div>
     </div>
   </div>
   <!-- container end -->
@@ -362,7 +375,7 @@
 <script src="js/toggle.js"></script>
 <!--<script src="js/dropzone.js"></script>-->
 <script src="js/functions.js"></script>
-<script src="js/snow.js"></script>
+<!-- <script src="js/snow.js"></script> -->
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.5/src/markerwithlabel_packed.js"></script>
 <script type="text/javascript">
@@ -373,7 +386,7 @@ $(document).ready(function(){
       ['Title A', 41.711879781934556, 44.791259765625, 1],
       ['Title B', 41.711879781934556, 44.780259765625, 2],
 
-      
+
       ['Title D', 41.744779781934556, 44.791259765625, 5],
       ['Title D', 41.744779781934556, 44.711259765625, 6],
       ['Title D', 41.744779781934556, 44.722259765625, 7],
@@ -413,9 +426,7 @@ $(document).ready(function(){
 
 </script>
 
-<script>
 
-</script>
 </body>
 
 </html>

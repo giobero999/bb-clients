@@ -34,21 +34,8 @@
   <!-- container start -->
   <div class="container">
     <div class="content">
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs col-md-12" role="tablist">
-        <li role="presentation" class="active col-md-6 col-xs-6">
-          <a href="#billboards" aria-controls="billboards" role="tab" data-toggle="tab">
-            <img src="img/bb.png" id="bb-icon" width="20" alt=""> BILLBOARDS</a>
-        </li>
-        <li role="presentation" class="col-md-6 col-xs-6">
-          <a href="#monitors" aria-controls="monitors" role="tab" data-toggle="tab">
-            <img src="img/tt.svg" width="30px" height="20px" alt=""> MONITORS</a>
-        </li>
-      </ul>
 
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <div class="tab-pane fade in active" id="billboards" role="tabpanel">
+
         <div class="grid" >
           <div class="billboard   col col--12-of-12">
             <div class="box col col--3-of-12">
@@ -357,9 +344,9 @@
         </div>
 
 
-      </div>
-      <div role="tabpanel" class="tab-pane fade" id="monitors">monitors</div>
-      </div>
+
+
+
     </div>
   </div>
   <!-- container end -->
@@ -377,29 +364,39 @@
 <script src="js/functions.js"></script>
 <script src="js/snow.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.5/src/markerwithlabel_packed.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+  var number = 1;
+  var markerPoint = new google.maps.Point(12, 23)
     var locations = [
       ['Title A', 41.711879781934556, 44.791259765625, 1],
       ['Title B', 41.711879781934556, 44.780259765625, 2],
-      ['Title C', 41.711879781934556, 44.689259765625, 3],
-      ['Title D', 41.700079781934556, 44.791259765625, 4],
-      ['Title D', 41.744779781934556, 44.791259765625, 4],
-      ['Title D', 41.744779781934556, 44.711259765625, 4],
+
+
+      ['Title D', 41.744779781934556, 44.791259765625, 5],
+      ['Title D', 41.744779781934556, 44.711259765625, 6],
+      ['Title D', 41.744779781934556, 44.722259765625, 7],
     ];
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
       center: new google.maps.LatLng(41.711879781934556, 44.791259765625),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+    //position: new google.maps.LatLng(locations[i][1], locations[i][2]),
 
     var infowindow = new google.maps.InfoWindow;
     var marker, i;
     for (i = 0; i < locations.length; i++) {
-      marker = new google.maps.Marker({
+        marker = new MarkerWithLabel({
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        draggable: true,
+        raiseOnDrag: false,
         map: map,
-        icon: "img/marker-red.png"
+        icon: "img/marker-red.png",
+        labelContent: number++,
+        labelAnchor: markerPoint,
+        labelClass: "labels" // the CSS class for the label
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -413,6 +410,7 @@ $(document).ready(function(){
       })(marker, i));
     }
   });
+
 </script>
 
 <script>

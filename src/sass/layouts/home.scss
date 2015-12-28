@@ -1,8 +1,9 @@
 body {
   font-family: 'titilium';
+  background: #F4F4F4;
 }
 .container {
-  background: #fff;
+  background: #F4F4F4;
 }
 header {
   @include background(linear-gradient($red 0%, lighten($black, 10%) 400%) left repeat);
@@ -41,18 +42,28 @@ header {
 .content {
   outline: 0 solid #e0e0e0;
   margin-top: 10px;
-  background: #fff;
+  background: #f4f4f4;
   max-width: 100%;
   .nav-tabs {
     li {
+
       a {
         text-align: center;
+        &:active{
+          color: $black;
+        }
+
         #bb-icon {
           opacity: 1;
         }
       }
     }
+
   }
+  .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+    background: #f4f4f4;
+  }
+
   .billboard {
     padding: 3px;
     margin-bottom: 60px;
